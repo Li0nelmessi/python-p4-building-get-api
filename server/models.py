@@ -1,3 +1,5 @@
+# app/models.py
+
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy_serializer import SerializerMixin
 
@@ -50,4 +52,3 @@ class User(db.Model, SerializerMixin):
     updated_at = db.Column(db.DateTime, onupdate=db.func.now())
 
     reviews = db.relationship('Review', backref='user')
-
